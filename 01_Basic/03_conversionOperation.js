@@ -16,10 +16,15 @@
 
 let isLoggedin = ''
 let booleantype = Boolean(isLoggedin)
-console.log(booleantype)
+// console.log(booleantype)
 
-console.log(typeof booleantype)
+// console.log(typeof booleantype)
 
 // 1 => true && 2 => false
 // "" => false
 // "shoyeb" => true
+
+// ************************* Opetations ************************
+
+console.log(+true)
+console.log(+"")
