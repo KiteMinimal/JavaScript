@@ -23,6 +23,15 @@
     const languages = ["JavaScript", "Python", "Java", "C++", "Ruby", "TypeScript"];
     createListItem(languages);
 
+    //Edit
+    const newLi = document.createElement('li');
+    newLi.textContent = "Go Lang"
+    document.querySelector('li:nth-child(5)').replaceWith(newLi)
+
+    //edit
+    const firstElement = document.querySelector('li:first-child');
+    firstElement.outerHTML = "<li>HTML</li>";
+
     
   </script>
 </html>
