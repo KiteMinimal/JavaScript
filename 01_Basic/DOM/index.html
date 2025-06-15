@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Leaning</title>
+</head>
+<body>
+   
+</body>
+<script>
+    const div = document.createElement('div')
+    div.className = "main"
+    div.id = Math.floor(Math.random() * 10 + 1)
+
+    div.style.backgroundColor = 'gray'
+    div.style.color = 'white'
+    div.style.padding = '20px'
+    div.style.borderRadius = '10px'
+    div.style.textAlign = 'center'
+
+    div.setAttribute('title', 'This is a div element')
+    const h1 = div.appendChild(document.createElement('h1') )
+    h1.innerText = "Kite Minimal"
+
+    document.body.appendChild(div)
+
+
+    console.log(div)
+
+</script>
+</html>
