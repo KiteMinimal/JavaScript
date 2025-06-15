@@ -32,6 +32,9 @@
     const firstElement = document.querySelector('li:first-child');
     firstElement.outerHTML = "<li>HTML</li>";
 
-    
+    //remove
+    document.querySelector('ul').removeChild(document.querySelector('li:first-child'));
+
+    document.querySelector('li:nth-child(3)').remove();
   </script>
 </html>
