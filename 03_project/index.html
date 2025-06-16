@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI CALCULATOR</title>
+  </head>
+  <body>
+    <div
+      class="main"
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        flex-direction: column;
+        gap: 1rem;
+      "
+    >
+      <h1>Calculate the BMI</h1>
+      <form
+        action="submit"
+        method="post"
+        style="display: flex; flex-direction: column; gap: 1rem"
+      >
+        <label for="weight">Enter weight in Kg</label>
+        <input type="text" id="weight" name="weight" placeholder="eg 70kg" />
+        <label for="height">Enter height in cm</label>
+        <input type="text" id="height" name="height" placeholder="eg 170cm" />
+        <button type="submit">Calculate</button>
+      </form>
+      <div class="result" style="color: blue; font-size: larger"></div>
+    </div>
+  </body>
+  <script>
+    const form = document.querySelector("form");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const weight = document.querySelector("#weight");
+      const height = document.querySelector("#height");
+
+
+      if (weight.value === "" || weight.value <= 0 || isNaN(weight.value)) {
+        return console.log(
+          (document.querySelector(
+            ".result"
+          ).textContent = `Enter a valid weight in Kg`)
+        );
+      }
+
+      if (height.value === "" || height.value <= 0 || isNaN(height.value)) {
+        return console.log(
+          (document.querySelector(
+            ".result"
+          ).textContent = `Enter a valid height in cm`)
+        );
+      }
+
+      const bmi = Math.round(weight.value / (height.value / 100) ** 2);
+      document.querySelector(".result").textContent = `Your BMI is ${bmi}`;
+    });
+  </script>
+</html>
