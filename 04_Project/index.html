@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Clock</title>
+  </head>
+  <body
+    style="
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      gap: 2rem;
+      background-color: rgba(69, 68, 68, 0.849);
+      color: whitesmoke;
+    "
+  >
+    <div
+      style="
+        width: 200px;
+        height: 200px;
+        border: none;
+        border-radius: 50%;
+        box-shadow: 0 0 15px 3px;
+        background-color: beige;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: cornflowerblue;
+        font-size: 2rem;
+      "
+      class="clock"
+    ></div>
+    <button
+      style="
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 15px 3px;
+        font-size: large;
+      "
+    >
+      Show Digital Clock
+    </button>
+  </body>
+  <script>
+    function liveClock() {
+      const button = document.querySelector("button");
+
+      setInterval(() => {
+        const date = new Date();
+        document.querySelector('.clock').textContent = date.toLocaleTimeString()
+      }, 1000);
+    }
+
+      document.querySelector('button').addEventListener('click', () => {
+        liveClock();
+      })
+  </script>
+</html>
