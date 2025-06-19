@@ -13,21 +13,39 @@
 //     e.stopPropagation()
 // })
 
-const callMe = function () {
-  console.log("My Self Shoyeb Stack Developer");
+// const callMe = function () {
+//   console.log("My Self Shoyeb Stack Developer");
+// };
+
+// const changeH1 = function () {
+//   document.querySelector("h1").textContent = "Learning ReactJS";
+// };
+// const clearTime = setTimeout(() => {
+//   callMe();
+//   changeH1();
+// }, 5000);
+
+// const button = document.querySelector('#stop')
+
+// button.addEventListener('click', () => {
+//     clearTimeout(clearTime)
+// })
+
+const func = function (arg) {
+  console.log(arg, Date.now());
 };
 
-const changeH1 = function () {
-  document.querySelector("h1").textContent = "Learning ReactJS";
-};
-const clearTime = setTimeout(() => {
-  callMe();
-  changeH1();
-}, 5000);
+let intervalId = null
 
+document.querySelector("#start").addEventListener("click", (e) => {
+    if(intervalId == null){
+        console.log("Interval started")
+        intervalId = setInterval(func, 2000, "Cool_Dude");
+    }
+});
 
-const button = document.querySelector('#stop')
-
-button.addEventListener('click', () => {
-    clearTimeout(clearTime)
-})
+document.querySelector("#stop").addEventListener("click", (e) => {
+  clearInterval(intervalId);
+  console.log("Interval stopped")
+  intervalId = null
+});
