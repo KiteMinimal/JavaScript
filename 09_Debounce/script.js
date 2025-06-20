@@ -1,20 +1,20 @@
-// function debounce(fun, delay) {
-//     let intervalId;
-//     return function(...arg) {
-//         clearTimeout(intervalId)
-//         intervalId = setTimeout(() => {
-//             fun.apply(this, arg)
-//         },delay)
-//     }
-// }
+function debounce(fun, delay) {
+    let intervalId;
+    return function(...arg) {
+        clearTimeout(intervalId)
+        intervalId = setTimeout(() => {
+            fun.apply(this, arg)
+        },delay)
+    }
+}
 
-// function inputValue(e) {
-//     console.log("Input value:", e.target.value)
-// }
+function inputValue(e) {
+    console.log("Input value:", e.target.value)
+}
 
-// const inputDebounce = debounce(inputValue, 500)
+const inputDebounce = debounce(inputValue, 500)
 
-// document.getElementById('input').addEventListener('input', inputDebounce)
+document.getElementById('input').addEventListener('input', inputDebounce)
 
 function throttle(fn, delay) {
   let lastValue = 0;
