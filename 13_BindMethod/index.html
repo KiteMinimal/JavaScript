@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bind Method</title>
+</head>
+<body>
+    <button>Click Me</button>
+    <script>
+        class User {
+            constructor(){
+                this.server = 'http://localhost:3000';
+                this.library = 'React'
+
+                // Requirement
+
+                document.querySelector('button').addEventListener('click', this.handleUsername.bind(this))
+            }
+
+            handleUsername() {
+                console.log('Button clicked')
+                console.log(this.library)
+            }
+        }
+
+        const event = new User()
+    </script>
+</body>
+</html>
